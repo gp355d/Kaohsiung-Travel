@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: PingFangTC-Regular;
+}
+
+.wrap {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+header {
+    height: 380px;
+    background: url(../image/the-urban-landscape-1698285.png)no-repeat;
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    padding-top: 89px;
+    font-size: 40px;
+    color: #FFFFFF;
+    letter-spacing: 3.89px;
+    margin-bottom: 96px;
+    margin: 0;
+}
+
+select {
+    width: 452px;
+    height: 48px;
+    margin-top: 96px;
+    background: rgba(255, 255, 255, 0.70);
+    border: 3px solid #FFFFFF;
+    border-radius: 3px;
+    font-size: 18px;
+    color: #000000;
+    line-height: 21px;
+}
+
+.hot-area {
+    width: 800px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.20);
+    border-radius: 5px;
+    position: absolute;
+    top: 352px;
+    margin-left: 112px;
+}
+
+.hot-area h2 {
+    padding-left: 26px;
+    font-family: AppleSystemUIFont;
+    font-size: 18px;
+    color: #000000;
+}
+
+input[type="button"] {
+    width: 130px;
+    height: 42px;
+    border-radius: 5px;
+    border: 0;
+    padding: 0;
+    margin-right: 23px;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.pushbtn {
+    padding-left: 51px;
+    padding-bottom: 18px;
+    /* text-align: center; */
+}
+
+.btn-purple {
+    background: #8A82CC;
+}
+
+.btn-orangle {
+    background: #FFA782;
+}
+
+.btn-yellow {
+    background: #F5D005;
+}
+
+.btn-blue {
+    background: #559AC8;
+}
+
+hr {
+    width: 900px;
+    border: 1px dashed #559AC8;
+    position: relative;
+}
+
+.content {
+    margin-top: 133px;
+    text-align: center;
+    height: 1432px;
+}
+
+.content h2 {
+    position: absolute;
+}
+
+.content img {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    bottom: -192px;
+}
+
+footer {
+    background: #559AC8;
+    text-align: center;
+    height: 90px;
+    padding: 24px 0;
+}
+
+footer>div:first-child {
+    font-family: AppleSystemUIFont;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+footer>div:nth-child(2) {
+    font-family: AppleSystemUIFont;
+    font-size: 14px;
+    color: #FFD366;
+}
