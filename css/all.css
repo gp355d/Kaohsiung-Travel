@@ -96,24 +96,22 @@ input[type="button"] {
 hr {
     width: 900px;
     border: 1px dashed #559AC8;
-    position: relative;
 }
 
 .content {
     margin-top: 133px;
     text-align: center;
     height: 1432px;
+    position: relative;
 }
 
-.content h2 {
-    position: absolute;
-}
+.content h2 {}
 
-.content img {
+.down {
     width: 24px;
     height: 24px;
     position: absolute;
-    bottom: -192px;
+    top: -12px;
 }
 
 footer {
@@ -134,4 +132,22 @@ footer>div:nth-child(2) {
     font-family: AppleSystemUIFont;
     font-size: 14px;
     color: #FFD366;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.list-img {
+    width: 464px;
+    height: 155px;
+    background-size: cover;
+    background-position: center;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
 }
