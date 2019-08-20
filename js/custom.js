@@ -39,11 +39,12 @@ function getdata(searchValue) {
                 <h2>${ data[index].Name}</h2>
                 <label>${ data[index].Zone}</label>
                 </div>
+                <div class="outer">
                 <div class="info-detail">
                 <p><img src="../image/icons_pin.png" alt="">${ data[index].Opentime}</p>
                 <p><img src="../image/icons_clock.png" alt="">${ data[index].Add}</p>
                 <p><img src="../image/icons_phone.png" alt="">${ data[index].Tel}<label class="tag"><img src="../image/icons_tag.png" alt="">${data[index].Ticketinfo}</label></p>
-
+                </div>
                 </div>
                 </div>`
             list.innerHTML = content;
