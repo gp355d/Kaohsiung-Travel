@@ -36,13 +36,15 @@ function getdata(searchValue) {
             choicetitle.textContent = data[index].Zone;
             content += `<div class="info">
                 <div class="list-img" style="background-image: url(${data[index].Picture1})">
-                </div>
                 <h2>${ data[index].Name}</h2>
                 <label>${ data[index].Zone}</label>
-                <p>${ data[index].Add}</p>
-                <p>${ data[index].Opentime}</p>
-                <p>${ data[index].Tel}</p>
-                <label>${data[index].Ticketinfo}</label>
+                </div>
+                <div class="info-detail">
+                <p><img src="../image/icons_pin.png" alt="">${ data[index].Opentime}</p>
+                <p><img src="../image/icons_clock.png" alt="">${ data[index].Add}</p>
+                <p><img src="../image/icons_phone.png" alt="">${ data[index].Tel}<label class="tag"><img src="../image/icons_tag.png" alt="">${data[index].Ticketinfo}</label></p>
+
+                </div>
                 </div>`
             list.innerHTML = content;
             console.log(data[index]);
