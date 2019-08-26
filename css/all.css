@@ -239,4 +239,38 @@ p {
     padding: 16px 24px 0px 24px;
 }
 
-.info-detail>p:nth-child(4) {}
+
+/* .pagination {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+.pagination li {
+    margin-left: 5px;
+}
+
+.pageLink.active {
+    color: #000;
+} */
+
+.pagelist a {
+    padding: 8px 12px;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid black;
+    margin-right: 8px;
+}
+
+.pagelist a.active {
+    background-color: orange;
+    color: white;
+    border: 1px solid transparent;
+}
+
+.prevBtn.disabled,
+.nextBtn.disabled {
+    color: #4A4A4A80;
+    cursor: default;
+    pointer-events: none;
+}

@@ -32,12 +32,26 @@
             <img class="down" src="./image/icons_down.png" alt="">
             <h2 class="title">111</h2>
             <div class="list"></div>
-        </section>
-        <footer>
-            <div>高雄旅遊網</div>
-            <div>資料來源：高雄市政府</div>
+            <!--<div style="text-align:center;">
+                <input type="button" id="first" onclick="firstPage()" value="first" />
+                <input type="button" id="next" onclick="nextPage()" value="next" />
+                <input type="button" id="previous" onclick="previousPage()" value="previous" />
+                <input type="button" id="last" onclick="lastPage()" value="last" />
 
-        </footer>
+                <div id="list"></div>
+            </div> -->
+            <ul class="pagination">
+                <a class="prevBtn disabled" href="">prev</a>
+                <div class="pagelist"></div>
+                <a class="nextBtn disabled" href="">next</a>
+    </div>
+    </ul>
+    </section>
+    <footer>
+        <div>高雄旅遊網</div>
+        <div>資料來源：高雄市政府</div>
+
+    </footer>
 
     </div>
     <script src="./js/custom.js"></script>
