@@ -17,11 +17,13 @@ var curentPage = 0; //現在所在頁數
 var curentarea = []; //目前區域資料
 var start = curentPage * datalimit;
 var url;
+prevBtn.style.display = 'none';
+nextBtn.style.display = 'none';
 var xhr = new XMLHttpRequest();
-alert(xhr.readyState)
+// alert(xhr.readyState)
 if (xhr.readyState == 0) {
     url = 'https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97';
-    alert('ddd');
+    // alert('ddd');
 } else {
     url = 'https://hotman0901.github.io/travel/json/datastore_search.json';
 }
@@ -99,7 +101,7 @@ function insertData(text) {
     }
     console.log(norepeatdata);
     if (norepeatdata == '') {
-
+        choicetitle.textContent = "目前尚無該區資料";
     }
     curentarea = norepeatdata;
     let start = curentPage * datalimit;
@@ -139,16 +141,45 @@ function showpagelist() {
         let active = i === curentPage ? 'active' : '';
         pagelist.innerHTML += `<a class="${active}" data-index="${i}" href="">${i+1}</a>`;
     }
+    // alert(curentPage);
+    // nextBtn.style.display = 'none';
     if (curentPage <= 0) {
+        nextBtn.style.display = 'none';
         prevBtn.classList.add('disabled');
         prevBtn.href;
+        console.log(9);
+        if (length == 0) {
+            prevBtn.style.display = "none"
+            console.log(7);
+        } else {
+            prevBtn.style.display = "block"
+            console.log(8);
+        }
+
     } else {
+        prevBtn.style.display = 'block';
+        nextBtn.style.display = 'none';
         prevBtn.classList.remove('disabled');
+        console.log(2);
     }
     if (curentPage >= length - 1) {
-        nextBtn.classList.add('disabled');
+        if (length == 0) {
+            nextBtn.style.display = 'none';
+            console.log(3);
+        } else {
+            nextBtn.style.display = 'block';
+            nextBtn.classList.add('disabled');
+            console.log(4);
+
+        }
+
+
     } else {
+        prevBtn.style.display = "block";
+        prevBtn.classList.add('disabled');
+        nextBtn.style.display = 'block';
         nextBtn.classList.remove('disabled');
+        console.log(5);
 
     }
 
@@ -157,7 +188,9 @@ function showpagelist() {
 function pagelistclick(e) {
     e.preventDefault();
     console.log(e.target.nodeName);
-    if (e.target.nodeName !== 'A') { retrun; }
+    if (e.target.nodeName !== 'A') {
+        return 0;
+    }
 
     curentPage = parseInt(e.target.dataset.index);
     console.log(curentPage);

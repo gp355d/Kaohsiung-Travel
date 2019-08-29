@@ -227,45 +227,58 @@ p {
     margin-left: 180px;
 }
 
-
-/* .info-detail>p:nth-child(4)>img {
-    margin-right: 12px;
-    margin-left: 2px;
-} */
-
 .outer {
     background: #FFFFFF;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.20);
     padding: 16px 24px 0px 24px;
 }
 
-
-/* .pagination {
+.pagination {
     display: flex;
     justify-content: center;
-    list-style-type: none;
+    padding-left: 0;
 }
-
-.pagination li {
-    margin-left: 5px;
-}
-
-.pageLink.active {
-    color: #000;
-} */
 
 .pagelist a {
-    padding: 8px 12px;
-    display: inline-block;
-    text-align: center;
-    border: 1px solid black;
-    margin-right: 8px;
+    color: #4A4A4A;
+    text-decoration: none;
+    margin-left: 35px;
+}
+
+.pagelist a:nth-last-child(1) {
+    margin-right: 35px;
+}
+
+.pagelist a:nth-first-child(1) {
+    margin-left: 35px;
 }
 
 .pagelist a.active {
-    background-color: orange;
-    color: white;
-    border: 1px solid transparent;
+    color: #559AC8;
+}
+
+.prevBtn,
+.nextBtn {
+    width: 41px;
+    font-size: 14px;
+    height: 17px;
+    color: #4A4A4A;
+    /* color: rgba(73, 73, 73, 0.50); */
+    text-decoration: none;
+}
+
+.prevBtn:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 3px;
+    content: "\f104";
+}
+
+.nextBtn:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-left: 3px;
+    content: "\f105";
 }
 
 .prevBtn.disabled,
@@ -273,4 +286,11 @@ p {
     color: #4A4A4A80;
     cursor: default;
     pointer-events: none;
+    text-decoration: none;
+}
+
+.scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }
