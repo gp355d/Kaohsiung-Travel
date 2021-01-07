@@ -20,24 +20,21 @@ var url;
 prevBtn.style.display = 'none';
 nextBtn.style.display = 'none';
 var xhr = new XMLHttpRequest();
-// alert(xhr.readyState)
-if (xhr.readyState == 0) {
-    url = 'https://data.kcg.gov.tw/api/action/datastore_search?resource_id=92290ee5-6e61-456f-80c0-249eae2fcc97';
-    // alert('ddd');
-} else {
-    url = 'https://hotman0901.github.io/travel/json/datastore_search.json';
-}
+url = 'https://raw.githubusercontent.com/hexschool/KCGTravel/master/datastore_search.json';
 xhr.open('get', url, true);
 xhr.send(null);
 xhr.onload = function() {
-    console.log(xhr.responseText);
+if(xhr.status == 200){
     data = JSON.parse(xhr.responseText);
-    console.log(data); //取回來的資料
     list = data.result.records; //存入list變數
+}
+else{
+    alert('原始來源發生錯誤');
+    return 0;
+}
 
 
     attractionLen = list.length; //取回來的資料總長度
-    // console.log(attractionLen);
     var allArea = []; //存放區域名字
     var filterArea;
     for (var i = 0; i < attractionLen; i++) { //存放所有區域名字(含重複的資料)
@@ -45,19 +42,15 @@ xhr.onload = function() {
     }
 
     filterArea = allArea.filter(function(item, i, array) { //過濾重複的區域名字
-        // console.log(item, i, array);
         return array.indexOf(item) === i;
     });
-    // console.log(filterArea)
 
     var selectval = '';
     for (var i = 0; i < filterArea.length; i++) { // //將排除所有地區的重複資料後放入selectArea中
         selectval += '<option>' + filterArea[i] + '</option>';
         choice.innerHTML = '<option>--請選擇行政區--</option>' + selectval;
     }
-
     contentupdate();
-
 }
 
 choice.addEventListener("change", selectArea, false); //選擇行政區
@@ -78,15 +71,10 @@ function hotArea(e) {
     // console.log(e.target.type);
     if (e.target.type !== "button") { return; } //判斷觸發事件tpye
     var ckeckStr = e.target.value;
-    alert(ckeckStr);
     insertData(ckeckStr);
-
-
 }
 
 // --------------------------------------- //
-
-
 
 function insertData(text) {
     datalist.innerHTML = "";
@@ -117,32 +105,29 @@ function showviewInfo(start = 0, end = Infinity) {
     for (var i = start; i < Contyrarea.length && i < end; i++) {
         str += `<div class="info">
                     <div class="list-img" style="background-image: url(${Contyrarea[i].Picture1})">
-                    <h2>${Contyrarea[i].Name}</h2>
-                    <label>${Contyrarea[i].Zone}</label>
+                        <h2>${Contyrarea[i].Name}</h2>
+                        <label>${Contyrarea[i].Zone}</label>
                     </div>
                     <div class="outer">
-                    <div class="info-detail">
-                    <p><img src="../image/icons_pin.png" alt="">${Contyrarea[i].Opentime}</p>
-                    <p><img src="../image/icons_clock.png" alt="">${Contyrarea[i].Add}</p>
-                    <p><img src="../image/icons_phone.png" alt="">${Contyrarea[i].Tel}<label class="tag"><img src="../image/icons_tag.png" alt="">${Contyrarea[i].Ticketinfo}</label></p>
+                        <div class="info-detail">
+                            <p><img src="../image/icons_pin.png" alt="">${Contyrarea[i].Opentime}</p>
+                            <p><img src="../image/icons_clock.png" alt="">${Contyrarea[i].Add}</p>
+                            <p><img src="../image/icons_phone.png" alt="">${Contyrarea[i].Tel}<label class="tag"><img src="../image/icons_tag.png" alt="">${Contyrarea[i].Ticketinfo}</label></p>
+                        </div>
                     </div>
-                    </div>
-                    </div>`;
+                </div>`;
     }
     datalist.innerHTML = str;
 
 }
 
 function showpagelist() {
-    // var list = document.querySelector('.pagelist');
     pagelist.innerHTML = '';
     var length = Math.ceil(curentarea.length / datalimit);
     for (let i = 0; i < length; i++) {
         let active = i === curentPage ? 'active' : '';
         pagelist.innerHTML += `<a class="${active}" data-index="${i}" href="">${i+1}</a>`;
     }
-    // alert(curentPage);
-    // nextBtn.style.display = 'none';
     if (curentPage <= 0) {
         nextBtn.style.display = 'none';
         prevBtn.classList.add('disabled');
