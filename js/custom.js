@@ -110,9 +110,9 @@ function showviewInfo(start = 0, end = Infinity) {
                     </div>
                     <div class="outer">
                         <div class="info-detail">
-                            <p><img src="../image/icons_pin.png" alt="">${Contyrarea[i].Opentime}</p>
-                            <p><img src="../image/icons_clock.png" alt="">${Contyrarea[i].Add}</p>
-                            <p><img src="../image/icons_phone.png" alt="">${Contyrarea[i].Tel}<label class="tag"><img src="../image/icons_tag.png" alt="">${Contyrarea[i].Ticketinfo}</label></p>
+                            <p><img src="./image/icons_pin.png" alt="">${Contyrarea[i].Opentime}</p>
+                            <p><img src="./image/icons_clock.png" alt="">${Contyrarea[i].Add}</p>
+                            <p><img src="./image/icons_phone.png" alt="">${Contyrarea[i].Tel}<label class="tag"><img src="./image/icons_tag.png" alt="">${Contyrarea[i].Ticketinfo}</label></p>
                         </div>
                     </div>
                 </div>`;
